@@ -2,63 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 
-
-// const obtenerJson = () => {
-//     const data = fs.readFileSync(nameJson, 'utf-8')
-//     return JSON.parse(data)
-// }
-
-// const save = (data) => {
-//     if (!data.title || !data.price || typeof data.title !== 'string' || typeof data.price !== 'number') throw new Error('Datos Invalidos')
-
-//     const products = obtenerJson()
-
-//     const newProduct = {
-//         title: data.title,
-//         price: data.price,
-//         id: products[products.length -1].id + 1
-//     }
-
-//     products.push(newProduct)
-
-//     saveProducts(products)
-// }
-
-// const saveProducts = (products) => {
-//     const data = JSON.stringify(products, null , '\t')
-//     fs.writeFileSync(nameJson, data)
-// }
-
-// const getbyId = (idBuscado) => {
-//     const products = obtenerJson()
-
-//     const index = products.findIndex((product) => product.id === idBuscado)
-
-//     if (index < 0) throw new Error('El producto no existe')
-
-//     return products[index]
-// }
-
-// const getAll = () => {
-//     const products = obtenerJson()
-//     return products
-// }
-
-// const deletebyId = (idDeleted) => {
-//     const products = obtenerJson()
-
-//     const index = products.findIndex((product) => product.id === idDeleted);
-
-//     if (index < 0) return;
-
-//     products.splice(index,1)
-    
-//     saveProducts(products)
-// }
-
-// deletebyId(4)
-
-
 const nameJson = 'products.json'
 
 
