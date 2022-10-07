@@ -81,8 +81,10 @@ class Contenedor {
 
 const contenedor = new Contenedor(productsFile);
 
+let visitas = 0
 app.get('/', (req, res) => {
-    res.send('Bienvenido a mi servidor - Alan Luna')
+    visitas++
+    res.send(`Bienvenido a mi servidor - Alan Luna - Visitas a la web ${visitas}`)
 });
 
 app.get('/productos', async (req, res) => {
@@ -107,3 +109,6 @@ app.get('/productos/:id', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server on port ${PORT}`);
 });
+
+
+
