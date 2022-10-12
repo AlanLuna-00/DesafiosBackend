@@ -12,20 +12,27 @@
 		"goles": 100
 	},
 	{
-		"nombre": "Julian Alvarez",
-		"edad": 22,
-		"goles": 53
+		"id": 3,
+		"nombre": "Juan Roman Riquelme",
+		"edad": 40,
+		"goles": 200
+	},
+	{
+		"id": 4,
+		"nombre": "Diego Maradona",
+		"edad": 60,
+		"goles": 500
 	},
 	{
 		"id": 5,
-		"nombre": "Julian Alvarez",
-		"edad": 22,
-		"goles": 53
-	},
+		"nombre": "Javier Mascherano",
+		"edad": 35,
+		"goles": 50
+	}, 
 	{
 		"id": 6,
-		"nombre": "Leonel Andres Messi",
-		"edad": 34,
-		"goles": 700
+		"nombre": "Sergio Aguero",
+		"edad": 32,
+		"goles": 300
 	}
 ]
