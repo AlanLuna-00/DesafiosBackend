@@ -1,0 +1,31 @@
+[
+	{
+		"id": 1,
+		"nombre": "Martin Palermo",
+		"edad": 40,
+		"goles": 400
+	},
+	{
+		"id": 2,
+		"nombre": "Carlos Tevez",
+		"edad": 36,
+		"goles": 100
+	},
+	{
+		"nombre": "Julian Alvarez",
+		"edad": 22,
+		"goles": 53
+	},
+	{
+		"id": 5,
+		"nombre": "Julian Alvarez",
+		"edad": 22,
+		"goles": 53
+	},
+	{
+		"id": 6,
+		"nombre": "Leonel Andres Messi",
+		"edad": 34,
+		"goles": 700
+	}
+]
