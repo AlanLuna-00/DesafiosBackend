@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Productos</title>
+</head>
+<body>
+    <h1>Formulario para cargar Productos</h1>
+    <form action="/api/products" method="post">
+        <ul>
+            <li>
+                <label for="nombre">Nombre de Producto</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Nombre de Producto" required>
+            </li>
+            <li>
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" id="precio" placeholder="Precio" required>
+            </li>
+            <li>
+                <label for="Foto">URL de la FOTO</label>
+                <input type="text" name="foto" id="foto" placeholder="URL DE LA FOTO" required>
+            </li>
+        </ul>
+        <button type="submit">Agregar Producto</button>
+    </form>
+    <footer>
+        <p>Desarrollado por <b><i>Alan Luna</i></b></p>
+    </footer>
+
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            display: block;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+</body>
+</html>

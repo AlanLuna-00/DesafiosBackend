@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"nombre": "Martin Palermo",
+		"edad": 40,
+		"goles": 400
+	},
+	{
+		"id": 2,
+		"nombre": "Carlos Tevez",
+		"edad": 36,
+		"goles": 100
+	},
+	{
+		"id": 3,
+		"nombre": "Juan Roman Riquelme",
+		"edad": 40,
+		"goles": 200
+	},
+	{
+		"id": 4,
+		"nombre": "Diego Maradona",
+		"edad": 60,
+		"goles": 500
+	},
+	{
+		"id": 5,
+		"nombre": "Javier Mascherano",
+		"edad": 35,
+		"goles": 50
+	}, 
+	{
+		"id": 6,
+		"nombre": "Sergio Aguero",
+		"edad": 32,
+		"goles": 300
+	}
+]

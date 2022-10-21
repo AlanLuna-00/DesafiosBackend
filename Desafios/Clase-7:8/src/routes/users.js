@@ -1,16 +1,23 @@
-const express = require('express');
-const fs = require('fs/promises'); 
+const { Router } = require('express');
+const fs = require('fs/promises');
 const path = require('path');
 
-const app = express();
+const router = Router();
 
-const filePath = path.resolve(__dirname, './users.json'); 
+const filePath = path.resolve('/Users/alanluna/Devs/DesafiosBackend/Desafios/Clase-7:8/users.json');
 console.log(filePath); 
 
-app.use(express.json()); // Para que el body sea un objeto de JS
-app.use(express.urlencoded({ extended: true })); // Para que el body sea un objeto de JS
+// Middleware
+const nameValidator = (req, res, next) => {
+    const { name } = req.headers;
+    if (!name) {
+        return res.status(400).json({ msg: 'No se recibio nombre' });
+    }
+    console.log(`Request from ${name} - Middleware users`);
+    next();
+}
 
-app.get('/usuarios', async (req, res) => { 
+router.get('/',nameValidator , async (req, res) => { 
 	const fileData = await fs.readFile(filePath, 'utf-8');
 	const usuarios = JSON.parse(fileData);
 	res.json({ 
@@ -18,7 +25,7 @@ app.get('/usuarios', async (req, res) => {
 	});
 });
 
-app.get('/usuarios/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
 	const id = req.params.id // Lo que recibo por parámetro del cliente
 	const fileData = await fs.readFile(filePath, 'utf-8'); // Leo el archivo
 	const usuarios = JSON.parse(fileData); // Parseo el archivo
@@ -38,9 +45,9 @@ app.get('/usuarios/:id', async (req, res) => {
 });
 
 
-app.post('/usuarios', async (req, res) => { 
+router.post('/', async (req, res) => { 
 	const data = req.body; // Lo que recibo por parámetro del cliente
-	console.log(req.body); 
+	console.log(data); 
 
 	const { nombre, edad, goles } = req.body; // Desestructuro el body
 
@@ -71,7 +78,7 @@ app.post('/usuarios', async (req, res) => {
 	})
 });
 
-app.put('/usuarios/:id', async (req, res) => { 
+router.put('/:id', async (req, res) => { 
 	const id = req.params.id; // Lo que recibo por parámetro del cliente
 	const {nombre, edad, goles} = req.body; // Desestructuro el body
 
@@ -110,7 +117,7 @@ app.put('/usuarios/:id', async (req, res) => {
 	})
 });
 
-app.delete('/usuarios/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
 	const id = req.params.id; // Lo que recibo por parámetro del cliente
 	const fileData = await fs.readFile(filePath, 'utf-8');
 	const usuarios = JSON.parse(fileData);
@@ -132,9 +139,4 @@ app.delete('/usuarios/:id', async (req, res) => {
 	})
 })
 
-
-const puerto = 8080; 
-
-app.listen(puerto, () => { 
-	console.log(`Servidor Listo escuchando en el puerto ${puerto}`) 
-})
+module.exports = router;
