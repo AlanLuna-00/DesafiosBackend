@@ -1,0 +1,19 @@
+html 
+    head
+        title= 'Show Products'
+        link(rel="stylesheet" href="styles.css")
+        link(href=href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous")
+    body
+        div.container
+            h1.d-flex.mx-auto= 'Products'
+            div.row
+                each product in listProducts  
+                    div.col-4
+                        div.card
+                            img.card-img-top(src=product.thumbnail alt=product.name)
+                            div.card-body
+                                h5.card-title=product.name
+                                p.card-text=product.price
+                                a.btn.btn-primary(href=`/products/show/${Number(product.id)}`) Ver Producto
+        div.container
+            a.btn.btn-danger.mt-5(href="/products") Cargar Producto Nuevo
