@@ -6,8 +6,8 @@ class Product {
         this.id = id ;
     }
 
-    getAll(products) {
-        return products;
+    getAll() {
+        return arrayProducts;
     }
 
     getById(id, products) {
@@ -20,8 +20,9 @@ class Product {
         }
     }
 
-    save(body, products) {
+    save(body) {
         try {
+            const products = this.getAll();
             const {titulo, precio, foto} = body;
             const newProduct = {
                 titulo : titulo,
@@ -64,4 +65,27 @@ class Product {
     }
 }
 
+const products = [
+	new Product(
+		'Escuadra',
+		123.45,
+		'https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png',
+		1
+	),
+	new Product(
+		'Calculadora',
+		234.56,
+		'https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png',
+		2
+	),
+	new Product(
+		'Lapicera',
+		345.67,
+		'https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationary-school-256.png',
+		3
+	),
+];
+
 module.exports = Product;
+    
+module.exports = products;
