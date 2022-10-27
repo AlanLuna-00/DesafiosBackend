@@ -12,8 +12,6 @@ router.get('/show/:id', (req, res) => {
     const id = req.params.id;
     const index = parseInt(id) - 1;
     const product = listProducts[index];
-    console.log(listProducts);
-    console.log(product);
     res.render('showOneProduct.pug', {
         name: product.name,
         price: product.price,

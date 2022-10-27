@@ -13,7 +13,7 @@ html
                             img.card-img-top(src=product.thumbnail alt=product.name)
                             div.card-body
                                 h5.card-title=product.name
-                                p.card-text=product.price
+                                p.card-text=`$ ${product.price},00`
                                 a.btn.btn-primary(href=`/products/show/${Number(product.id)}`) Ver Producto
         div.container
             a.btn.btn-danger.mt-5(href="/products") Cargar Producto Nuevo
